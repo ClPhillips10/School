@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/lakephillips/Documents/Classes/CS 100/Repos/Repos/p3'
+relocations:     []
+...
