@@ -25,7 +25,7 @@ clock = pygame.time.Clock()
 
 # Snake block size and speed
 BLOCK_SIZE = 20
-SNAKE_SPEED = 15
+SNAKE_SPEED = 8
 
 # Fonts
 font_style = pygame.font.SysFont("bahnschrift", 25)

@@ -67,10 +67,10 @@ int CheckIfGUID(char token[]){
     int valid = 0;
     for(int i = 0; i < strlen(token); i++)
     {
-        if((token[i] >= '0' && token[i] <= '9') || (token[i] >= 'A' && token[i] <= 'F') || (token[i] >= 'a' && token[i] <= 'f') || token[i] == '-')
+        if((token[i] >= '0' && token[i] <= '9') || (token[i] >= 'A' && token[i] <= 'F') || (token[i] >= 'a' && token[i] <= 'f'))
         valid ++;
     }    
-    if(valid == 36)
+    if(valid == 32)
     {
     printf("The token is a guid\n");
     return 1;
@@ -80,17 +80,21 @@ return 0;
 int CheckFloatingPoint(char token[])
 {
     int isItTrue = 0;
+    int negValue = 0;
     for(int i = 0; i < strlen(token); i++)
     {
         
         if(token[i] == '.')
         {
-        isItTrue = 1;
-        i = strlen(token);
+        isItTrue += 1;
         }
-        else 
-        isItTrue = 0;
+        if(token[i] == '-')
+        negValue += 1;
+        if(token[i +1] == '-')
+        return 0; 
     }
+    if(negValue > 1)
+    return 0;
     if(isItTrue == 1 && token[0] != '-')
     {
         printf("The token is a positive floating-point number\n");
@@ -147,5 +151,5 @@ int main (){
 
     }
 
-    return 0;
+    return 1;
 }
